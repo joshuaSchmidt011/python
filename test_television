@@ -1,0 +1,89 @@
+from television import *
+
+def test_one():
+    # Show that TV Details off
+    tv_1 = Television()
+    print(tv_1)
+    # How that TV Detail change when TV on
+    tv_1.power()
+    print(tv_1)
+
+    # Mute
+    # Show TV details, increase volume 1, mute
+    tv_1.volume_up()
+    tv_1.mute()
+    print(tv_1)
+    # Unmute
+    tv_1.mute()
+    print(tv_1)
+    # TV off and muted
+    tv_1.mute()
+    tv_1.power()
+    print(tv_1)
+    # TV off and unmuted
+    tv_1.mute()
+    print(tv_1)
+
+    # Channel up:
+    # TV off, increase
+    tv_1.channel_up()
+    print(tv_1)
+    # TV on, increase
+    tv_1.power()
+    tv_1.channel_up()
+    print(tv_1)
+    # Channel up past max
+    tv_1.channel_up()
+    tv_1.channel_up()
+    tv_1.channel_up()
+    print(tv_1)
+
+    # Channel down
+    # Decrease power off
+    tv_1.power()
+    tv_1.channel_down()
+    print(tv_1)
+    # TV on, decrease past minimum
+    tv_1.power()
+    tv_1.channel_down()
+    print(tv_1)
+
+    # Volume
+    # Increase TV off:
+    tv_1.power()
+    tv_1.volume_up()
+    print(tv_1)
+    # TV on increase
+    tv_1.power()
+    tv_1.volume_up()
+    print(tv_1)
+    # TV on, muted, then increase
+    tv_1.mute()
+    tv_1.volume_up()
+    print(tv_1)
+    # TV on, increase past max
+    tv_1.volume_up()
+    tv_1.volume_up()
+    tv_1.volume_up()
+    print(tv_1)
+    # TV off, volume down
+    tv_1.power()
+    tv_1.volume_down()
+    print(tv_1)
+    # TV on Decrease
+    tv_1.power()
+    tv_1.volume_down()
+    print(tv_1)
+    # TV on, Muted, then decrease
+    tv_1.mute()
+    tv_1.volume_down()
+    print(tv_1)
+    # TV on, volume down past min
+    tv_1.volume_down()
+    tv_1.volume_down()
+    tv_1.volume_down()
+    print(tv_1)
+
+
+if __name__ == '__main__':
+    test_one()
